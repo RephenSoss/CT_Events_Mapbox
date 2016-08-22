@@ -71,19 +71,8 @@
     width:75%;
     top:0;bottom:0;
   }
-  .my-custom-control {
-  background-image: url('Casey_Trees_Logo.png');
-  background-repeat: no-repeat;
-  width:112px; /* you will likely need to specify image width and height here */
-  height:101px;
-}
-  /*.heading {
-    background:#fff;
-    border-bottom:1px solid #eee;
-    height:60px;
-    line-height:60px;
-    text-align: center;
-  }*/
+
+
   .listings {
     height:100%;
     overflow:auto;
@@ -364,22 +353,7 @@
 
 
 
-  var MyControl = L.Control.extend({
-    options: {
-      position: 'bottomright'
-    },
-
-    onAdd: function (map) {
-      // create the control container with a particular class name
-      // ** you can add the image to the div as a background image using css
-      var container = L.DomUtil.create('div', 'my-custom-control');
-
-      // ... initialize other DOM elements, add listeners, etc.
-      return container;
-    }
-  });
-
-  map.addControl(new MyControl());
+  
 
 
 
@@ -390,7 +364,7 @@ locations.eachLayer(function(locale) {
     var prop = locale.feature.properties;
 
     // Each marker on the map.
-    var popup = '<h3>Event</h3><div>' + prop.Name + '<img src="'+prop.Picture+'" alt="">' + '<a href="'+  prop.Link +'">Learn More</a>';
+    var popup = '<h3>Event</h3><div>' + prop.Name + '<br />' +  '<a href="'+  prop.Link +'">Learn More</a>';
 
     var listing = listings.appendChild(document.createElement('div'));
     listing.className = 'item';
@@ -401,6 +375,11 @@ locations.eachLayer(function(locale) {
 
 
     link.innerHTML = prop.Name + '<br /><small class="quiet">' + "When: " + prop.Datee + '<br />' + "Where: " + prop.Address +'<img src="'+prop.Picture+'" alt="">';
+
+
+
+
+    // '<img src="'+prop.Picture+'" alt="">' + 
 
 
     // if (prop.crossStreet) {
@@ -423,7 +402,7 @@ locations.eachLayer(function(locale) {
     // Marker interaction
     locale.on('click', function(e) {
       // 1. center the map on the selected marker.
-      map.panTo(locale.getLatLng(), 14);
+      map.setView(locale.getLatLng(), 14);
 
       // 2. Set active the markers associated listing.
       setActive(listing);
