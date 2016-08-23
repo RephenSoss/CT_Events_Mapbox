@@ -28,23 +28,20 @@
     text-align: center;
     font:700 20px 'Source Sans Pro', Sans-serif;
     background-image: url("imgres.jpg");
-    background-size: 275px 125px;
+    background-size: 600px 375px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     border: solid;
     border-width: 1px;
     border-color: black;
-
   }
-
-
   img {
 
     width: 95%;
     height: 95%;
     border-radius: 8px;
     display: block;
+    background-image: none;
   }
-
   a {
     color:#404040;
     text-decoration:none;
@@ -71,8 +68,6 @@
     width:75%;
     top:0;bottom:0;
   }
-
-
   .listings {
     height:100%;
     overflow:auto;
@@ -95,7 +90,7 @@
   .listings .item.active .title,
   .listings .item .title:hover { color:#8cc63f; }
   .listings .item.active {
-    background-color:#f8f8f8;
+    background-color:black;
   }
 
   ::-webkit-scrollbar {
@@ -382,11 +377,7 @@ locations.eachLayer(function(locale) {
     // '<img src="'+prop.Picture+'" alt="">' + 
 
 
-    // if (prop.crossStreet) {
-    //   link.innerHTML += '<br /><small class="quiet">' + prop.crossStreet + '</small>';
-    //   popup += '<br /><small class="quiet">' + prop.crossStreet + '</small>';
-    // }
-
+  
  
 
     link.onclick = function() {
@@ -406,6 +397,8 @@ locations.eachLayer(function(locale) {
 
       // 2. Set active the markers associated listing.
       setActive(listing);
+      listing.scrollIntoView(true);
+
     });
 
     popup += '</div>';
