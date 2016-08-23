@@ -33,13 +33,11 @@
     border: solid;
     border-width: 1px;
     border-color: black;
-    border-radius: 4px;
   }
   img {
 
     width: 95%;
     height: 95%;
-    border-radius: 8px;
     display: block;
     background-image: none;
   }
@@ -51,7 +49,7 @@
 
   .sidebar {
     position:absolute;
-    width:25%;
+    width:30%;
     height:100%;
     top:0;left:0;
     overflow:hidden;
@@ -65,29 +63,29 @@
   }
   .map {
     position:absolute;
-    left:25%;
-    width:75%;
+    left:30%;
+    width:70%;
     top:0;bottom:0;
   }
   .listings {
     height:100%;
     overflow:auto;
-    padding-bottom:150px;
+    padding-bottom:100px;
   }
   .listings .item {
     display:block;
-    border-bottom: 1px solid black;
-    padding:10px;
+    padding:5px;
+    padding-bottom:10px;
     text-decoration:none;
   }
   .listings .item:last-child { border-bottom:none; }
   .listings .item .title {
     display:block;
-    color:#00853e;
+    color: black;
     font-weight:700;
-    font-size: large;
+    font-size: 28px;
   }
-  .listings .item .title small { font-weight:400; }
+  .listings .item .title small { font-weight:400; font-size: 18px }
   .listings .item.active .title,
   .listings .item .title:hover { color:#8cc63f; }
   .listings .item.active {
@@ -102,9 +100,10 @@
   }
   ::-webkit-scrollbar-track {
     background:none;
+    color: green;
   }
   ::-webkit-scrollbar-thumb {
-    background:#000000;
+    background:green;
     border-radius:0;
   }
 
@@ -131,18 +130,17 @@
   }
   .leaflet-popup-content-wrapper {
     padding:0;
+    border-radius: 10x;
   }
   .leaflet-popup-content h3 {
-    background:#91c949;
     color:#8cc63f;
-    background-color: green;
     text-align: center;
     display:block;
     padding:5px;
     border-radius:3px 3px 0 0;
     font-weight:700;
     margin-top:-15px;
-    border-radius: 5px;
+    border-radius: 10px;
 
   }
   .leaflet-popup-content div {
@@ -380,7 +378,7 @@ locations.eachLayer(function(locale) {
   
  
 
-    link.onclick = function() {
+    link.onclick = function(e) {
       setActive(listing);
 
       // When a menu item is clicked, animate the map to center
@@ -391,13 +389,13 @@ locations.eachLayer(function(locale) {
     };
 
     // Marker interaction
-    locale.on('click', function(e) {
+    locale.on('click', function() {
       // 1. center the map on the selected marker.
-      map.setView(locale.getLatLng(), 14);
 
       // 2. Set active the markers associated listing.
       setActive(listing);
       listing.scrollIntoView(true);
+
 
     });
 
