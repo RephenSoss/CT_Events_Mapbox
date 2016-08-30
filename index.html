@@ -33,6 +33,7 @@
     border: solid;
     border-width: 1px;
     border-color: black;
+    border-bottom: 1px;
   }
   img {
 
@@ -40,6 +41,9 @@
     height: 95%;
     display: block;
     background-image: none;
+    align: center;
+    border-bottom: 1px;
+    border-color: black;
   }
   a {
     color:#404040;
@@ -54,6 +58,7 @@
     top:0;left:0;
     overflow:hidden;
     border-right:1px solid rgba(0,0,0,0.25);
+    text-align: center;
   }
   .pad2 {
     padding:20px;
@@ -368,12 +373,6 @@ locations.eachLayer(function(locale) {
 
 
     link.innerHTML = prop.Name + '<br /><small class="quiet">' + "When: " + prop.Datee + '<br />' + "Where: " + prop.Address +'<img src="'+prop.Picture+'" alt="">';
-
-
-
-
-    // '<img src="'+prop.Picture+'" alt="">' + 
-
 
   
  
