@@ -1,0 +1,155 @@
+body {
+    color:#404040;
+    font:400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+    margin:0;
+    padding:0;
+    -webkit-font-smoothing:antialiased;
+  }
+  * {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+  }
+h1 {
+
+    color: white;
+    background-image: url("title.png");
+    background-size: 338px 73px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 40px;
+  }
+@media screen and (max-width: 1200px) {
+
+    h1 {display:none;}
+
+  }
+@media screen and (max-width: 900px) {
+
+  .listings {
+    display:block;
+    color: black;
+    font-size: 16px;
+  }
+  }
+
+
+img {
+    width: 95%;
+    height: 95%;
+    display: block;
+    background-image: none;
+    align: center;
+    border-color: black;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+a {
+    text-decoration:none;    
+    border-radius: 5px;
+    background-color: rgba(220,220,220,.8)
+  }
+a:hover { color:#101010; }
+
+  .sidebar {
+    position:absolute;
+    left: 3%;
+    width:25%;
+    height:95%;
+    z-index: 5;
+    top:0;left:2;
+    overflow:hidden;
+    text-align: center;
+    background-color: rgba(0,0,0,.0);
+    border-radius: 5px;
+
+  }
+  .pad2 {
+    padding:20px;
+
+  }
+  .quiet {
+    color:#888;
+  }
+  .map {
+    position:absolute;
+    width:100%;
+    top:0;bottom:0;
+  }
+  .listings {
+    height:100%;
+    overflow:auto;
+    padding-bottom:100px;
+    margin-bottom: 10px;
+
+  }
+  .listings .item {
+    display:block;
+    text-decoration:none;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 5px;
+    border-width: 2px;
+    padding: 3px;
+
+
+  }
+  .listings .item:last-child { border-bottom:none; }
+  .listings .item .title {
+    display:block;
+    color: black;
+    font-weight:700;
+    font-size: 26px;
+  }
+  .listings .item .title small { font-weight:400; font-size: 18px; color: black; }
+  .listings .item.active .title,
+  .listings .item .title:hover { padding: 15px; border-radius: 5px; background-color: rgba(119,163,121,1);  }
+  .listings .item.active {
+  }
+
+  .clearfix { display:block; }
+  .clearfix:after {
+    content:'.';
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+  }
+
+  /* Marker tweaks */
+  .leaflet-popup-close-button {
+    display:none;
+  }
+  .leaflet-popup-content {
+    font:700 20px/28px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+    padding:0;
+    width:200px;
+    border: solid;
+    border-radius: 10px;
+    border-width: 1px;
+  }
+  .leaflet-popup-content-wrapper {
+    padding:0;
+    border-radius: 10x;
+  }
+  .leaflet-popup-content h3 {
+    color:#8cc63f;
+    text-align: center;
+    display:block;
+    padding:5px;
+    border-radius:3px 3px 0 0;
+    font-weight:700;
+    margin-top:-15px;
+    border-radius: 10px;
+
+  }
+  .leaflet-popup-content div {
+    padding:5px;
+    border-radius: 10px;
+
+  }
+  .leaflet-container .leaflet-marker-icon { cursor:pointer; }
